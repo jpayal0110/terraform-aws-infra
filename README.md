@@ -1,5 +1,5 @@
 # **Terraform AWS Infrastructure Setup**
-XX
+
 This repository contains the Terraform configurations for setting up a cloud infrastructure on AWS. It includes the creation of a **Virtual Private Cloud (VPC)** with 3 public subnets, 3 private subnets, and necessary route tables for both types of subnets.
 
 ## **Prerequisites**
