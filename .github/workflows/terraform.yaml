@@ -1,0 +1,30 @@
+name: Terraform Workflow
+
+on:
+  pull_request:
+    branches: [ "main" ]  
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest  
+
+    steps:
+      # 1. Checkout the code from your repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Set up Terraform
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      # 4. Run Terraform fmt to check formatting
+      - name: Terraform fmt
+        run: terraform fmt -check -recursive
+
+      # 5. Initialize Terraform
+      - name: Terraform Init
+        run: terraform init
+
+      # 6. Validate the Terraform code
+      - name: Terraform Validate
+        run: terraform validate
